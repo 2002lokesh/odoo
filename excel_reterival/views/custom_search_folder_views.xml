@@ -1,0 +1,28 @@
+<odoo>
+    <record id="view_custom_search_folder_form" model="ir.ui.view">
+        <field name="name">custom.search.folder.form</field>
+        <field name="model">custom.search.folder</field>
+        <field name="arch" type="xml">
+            <form string="Search Folder">
+                <sheet>
+                    <group>
+                        <field name="folder_name"/>
+                        <field name="file_name"/>
+                    </group>
+                    <footer>
+                        <button string="Search" type="object" name="search_folder" class="btn-primary"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_custom_search_folder" model="ir.actions.act_window">
+        <field name="name">Search Folder</field>
+        <field name="res_model">custom.search.folder</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_custom_search_folder_form"/>
+    </record>
+
+    <menuitem id="menu_custom_search_folder" name="Search Folder" action="action_custom_search_folder"/>
+</odoo>
